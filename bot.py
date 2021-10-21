@@ -1,12 +1,20 @@
 import discord
 import praw
 import random
+import csv
 from discord.ext import commands
+
+tokens = {}
+with open('tokens.csv', 'r') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        tokens[row[0]]=row[1]
+print(tokens)
 
 client = discord.Client()
 
 reddit = praw.Reddit(client_id='GiJpLeUa2EzUoaODmjfLSQ',
-                     client_secret='REDDITAPPTOKEN',
+                     client_secret=tokens['reddit_token'],
                      user_agent='Jeeves')
 
 #Event to show Bot Running Status in Terminal
@@ -63,4 +71,4 @@ async def on_message(message):
 
 
 
-client.run("TOKEN")
+client.run(tokens['discord_token'])
