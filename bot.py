@@ -13,8 +13,8 @@ print(tokens)
 
 client = discord.Client()
 
-reddit = praw.Reddit(client_id='GiJpLeUa2EzUoaODmjfLSQ',
-                     client_secret=tokens['reddit_token'],
+reddit = praw.Reddit(client_id='aOw905HS96wGTsfsUSEZDA',
+                     client_secret='29KqP0RQOTop_JfjHDGi5G2cmCye1w',
                      user_agent='Jeeves')
 
 #Event to show Bot Running Status in Terminal
